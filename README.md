@@ -72,7 +72,7 @@ python manage.py runserver
 cd frontend
 npm install
 npm run dev
-# Frontend rodando em http://localhost:3000
+# Frontend rodando em http://localhost:3001
 ```
 
 ---
@@ -133,6 +133,8 @@ No painel do Cloudflare Zero Trust:
 2. **Backend (API)**:
    - Domínio: `api.projetoravenna.cloud`
    - Serviço: `http://localhost:8000`
+
+> **Nota**: O PostgreSQL está exposto na porta **5433** do host para evitar conflitos com instalações locais.
 
 ---
 

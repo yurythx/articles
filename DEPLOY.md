@@ -15,8 +15,15 @@ Certifique-se de que os seguintes arquivos criados/editados recentemente estão 
 ## 2. Configuração de Variáveis de Ambiente
 
 ### Backend
-Edite o arquivo `backend/.env` **no servidor** para garantir a segurança (especialmente a SECRET_KEY).
-As configurações de domínio (`ALLOWED_HOSTS`, `CORS`) já estão pré-configuradas no `docker-compose.yml` para `projetoravenna.cloud`.
+No servidor, dentro da pasta `backend`, você encontrará o arquivo `.env.production`.
+1. Renomeie-o para `.env`: `mv .env.production .env`
+2. Edite-o para definir sua `SECRET_KEY`.
+
+```bash
+cd backend
+mv .env.production .env
+nano .env
+```
 
 ```env
 SECRET_KEY=gere-uma-chave-secreta-nova
