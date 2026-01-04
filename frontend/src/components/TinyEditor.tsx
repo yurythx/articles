@@ -25,9 +25,9 @@ export function TinyEditor({ value, onChange, height = 400 }: TinyEditorProps) {
     <Editor
       tinymceScriptSrc="/tinymce/tinymce.min.js"
       value={value}
+      licenseKey='gpl'
+      disabled={false}
       init={{
-        license_key: 'gpl',
-        readonly: false,
         height,
         menubar: false,
         skin,
