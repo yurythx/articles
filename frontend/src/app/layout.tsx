@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Providers from "./providers";
 import { Header } from "@/components/Header";
@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     siteName: "Projeto Ravenna",
     url: "https://projetoravenna.cloud"
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0ea5e9"
 };
 
 export default function RootLayout({
