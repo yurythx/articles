@@ -8,7 +8,9 @@ import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
 import { ErrorDialog } from '@/components/ErrorDialog';
 import { SuccessDialog } from '@/components/SuccessDialog';
 
-export default function LoginPage() {
+import { Suspense } from 'react';
+
+function LoginContent() {
   const { login, loading, token } = useAuth();
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
@@ -181,6 +183,14 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="container-custom py-20 text-center">Carregando...</div>}>
+      <LoginContent />
+    </Suspense>
   );
 }
 
