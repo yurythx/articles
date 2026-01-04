@@ -56,8 +56,8 @@ docker-compose logs -f
 
 Certifique-se de que seus túneis apontem para as portas locais do servidor:
 
-1. **Frontend (`projetoravenna.cloud`)** -> `http://localhost:3000`
+1. **Frontend (`projetoravenna.cloud`)** -> `http://localhost:3001`
 2. **Backend/API (`api.projetoravenna.cloud`)** -> `http://localhost:8000`
 
 **Importante**:
-Como o SSL é gerenciado pelo Cloudflare, a aplicação interna roda em HTTP (portas 3000 e 8000), mas o `CORS_ALLOWED_ORIGINS` e `CSRF` estão configurados para esperar chamadas vindas de `https://`. Isso já foi ajustado nos arquivos de configuração.
+Como o SSL é gerenciado pelo Cloudflare, a aplicação interna roda em HTTP (portas 3001 e 8000), mas o `CORS_ALLOWED_ORIGINS` e `CSRF` estão configurados para esperar chamadas vindas de `https://`. Isso já foi ajustado nos arquivos de configuração.

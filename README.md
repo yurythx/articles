@@ -128,7 +128,7 @@ No painel do Cloudflare Zero Trust:
 
 1. **Frontend**:
    - Domínio: `projetoravenna.cloud`
-   - Serviço: `http://localhost:3000`
+   - Serviço: `http://localhost:3001`
 
 2. **Backend (API)**:
    - Domínio: `api.projetoravenna.cloud`
