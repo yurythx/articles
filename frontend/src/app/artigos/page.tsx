@@ -197,8 +197,8 @@ function ArticlesContent() {
           <div className="space-y-8 animate-fade-in">
             {/* Uniform Grid for ALL articles (including the first one) */}
             <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {articles.map((article, i) => (
-                <div key={article.id} className="animate-fade-in" style={{ animationDelay: `${i * 100}ms` }}>
+              {articles.filter(a => !!a).map((article, i) => (
+                <div key={article.id || i} className="animate-fade-in" style={{ animationDelay: `${i * 100}ms` }}>
                   <ArticleCard article={article} categories={cats} tagsList={tgs} />
                 </div>
               ))}
