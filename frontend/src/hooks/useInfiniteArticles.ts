@@ -24,6 +24,7 @@ function normalize(page: PageShape): { items: Article[]; nextPage: number | null
 export function useInfiniteArticles(params?: Record<string, unknown>) {
   return useInfiniteQuery({
     queryKey: ['articles', 'infinite', params],
+    initialPageParam: 1,
     queryFn: async ({ pageParam = 1 }) => {
       const { data } = await api.get('/articles/posts/', {
         params: { ...params, page: pageParam },
