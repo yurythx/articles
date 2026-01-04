@@ -3,7 +3,7 @@ import ArticleClient from './ArticleClient';
 import { notFound } from 'next/navigation';
 
 async function getArticle(slug: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1';
+  const baseUrl = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1';
   const res = await fetch(`${baseUrl}/articles/posts/${slug}/`, {
     next: { revalidate: 60 }, // Revalidate every minute
   });
