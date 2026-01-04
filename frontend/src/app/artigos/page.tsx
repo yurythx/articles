@@ -11,7 +11,9 @@ import { Search, Filter, ArrowUpDown, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { useAuth } from '@/contexts/AuthContext';
 
-export default function ArtigosPage() {
+import { Suspense } from 'react';
+
+function ArticlesContent() {
   const { disabled } = useModules();
   const { token } = useAuth();
   const searchParams = useSearchParams();
@@ -216,5 +218,13 @@ export default function ArtigosPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ArtigosPage() {
+  return (
+    <Suspense fallback={<div className="container-custom py-20 text-center">Carregando artigos...</div>}>
+      <ArticlesContent />
+    </Suspense>
   );
 }
