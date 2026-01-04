@@ -105,9 +105,9 @@ export default function ArtigosPage() {
     );
   }
 
-  const articles = data?.items || [];
-  const featuredArticle = articles.length > 0 && !search && !category && !tags.length ? articles[0] : null;
-  const gridArticles = featuredArticle ? articles.slice(1) : articles;
+  const articles = data?.pages.flatMap((page: any) => page.items) || [];
+  const featuredArticle = null;
+  const gridArticles = articles;
 
   return (
     <div className="min-h-screen pb-16 bg-background">
