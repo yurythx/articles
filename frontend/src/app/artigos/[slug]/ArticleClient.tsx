@@ -20,6 +20,11 @@ import { components } from '@/types/api';
 
 type Article = components['schemas']['Article'] & { author_name?: string };
 
+const sanitize = (html: string) => {
+    if (typeof window === 'undefined') return html;
+    return DOMPurify.sanitize(html);
+};
+
 export default function ArticleClient({ slug, initialData }: { slug: string, initialData?: Article }) {
     const { data: serverData, isLoading, error } = useArticle(slug, { initialData });
     const data = serverData || initialData;
@@ -235,7 +240,7 @@ export default function ArticleClient({ slug, initialData }: { slug: string, ini
                             ref={articleRef}
                             className="prose prose-lg prose-slate dark:prose-invert max-w-none"
                             dangerouslySetInnerHTML={{
-                                __html: DOMPurify.sanitize(data.content || ''),
+                                __html: sanitize(data.content || ''),
                             }}
                         />
 
